@@ -4,10 +4,11 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 @Entity
-@Table(name = "CATEGORIA")
-public class Categoria implements Serializable {
+@Table(name = "PRODUTO")
+public class Produto implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,22 +16,35 @@ public class Categoria implements Serializable {
     private Integer id;
     @Column(name = "NOME", length = 50, nullable = false)
     private String nome;
+    @Column(name = "PRECO", nullable = false)
+    private Double preco;
 
-    //fazendo associação com a classe PRODUTOS
-    @ManyToMany(mappedBy = "categorias")
-    private List<Produto> produtos = new ArrayList<>();
-
-    @Deprecated
-    public Categoria() {
+    public Produto() {
     }
 
-    public Categoria(String nome) {
-        super();
+    public Produto(Integer id) {
+        this.id = id;
+    }
+
+    @ManyToMany
+    @JoinTable(name = "PRODUTO_CATEGORIA",
+            joinColumns = @JoinColumn(name = "produto_id"),
+            inverseJoinColumns = @JoinColumn(name = "categoria_id")
+    )
+    private List<Categoria> categorias = new ArrayList<>();
+
+    public Produto(Integer id, String nome, Double preco) {
+        this.id = id;
         this.nome = nome;
+        this.preco = preco;
     }
 
     public Integer getId() {
         return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -41,20 +55,20 @@ public class Categoria implements Serializable {
         this.nome = nome;
     }
 
-    public List<Produto> getProdutos() {
-        return produtos;
+    public Double getPreco() {
+        return preco;
     }
 
-    public void setProdutos(List<Produto> produtos) {
-        this.produtos = produtos;
+    public void setPreco(Double preco) {
+        this.preco = preco;
     }
 
-    @Override
-    public String toString() {
-        return "Categoria{" +
-                "id=" + id +
-                ", nome='" + nome + '\'' +
-                '}';
+    public List<Categoria> getCategorias() {
+        return categorias;
+    }
+
+    public void setCategorias(List<Categoria> categorias) {
+        this.categorias = categorias;
     }
 
     public int hashCode() {
@@ -71,7 +85,7 @@ public class Categoria implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Categoria other = (Categoria) obj;
+        Produto other = (Produto) obj;
         if(id == null){
             if(other.id != null)
                 return false;
@@ -80,4 +94,5 @@ public class Categoria implements Serializable {
             return false;
         return true;
     }
+
 }
