@@ -1,5 +1,7 @@
 package com.farmcont.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -19,13 +21,7 @@ public class Produto implements Serializable {
     @Column(name = "PRECO", nullable = false)
     private Double preco;
 
-    public Produto() {
-    }
-
-    public Produto(Integer id) {
-        this.id = id;
-    }
-
+    @JsonBackReference //omitir a lista de categorias para cada produto
     @ManyToMany
     @JoinTable(name = "PRODUTO_CATEGORIA",
             joinColumns = @JoinColumn(name = "produto_id"),
@@ -33,6 +29,12 @@ public class Produto implements Serializable {
     )
     private List<Categoria> categorias = new ArrayList<>();
 
+    public Produto() {
+    }
+
+    public Produto(Integer id) {
+        this.id = id;
+    }
     public Produto(Integer id, String nome, Double preco) {
         this.id = id;
         this.nome = nome;
