@@ -1,14 +1,9 @@
 package com.farmcont;
 
-import com.farmcont.domain.Categoria;
-import com.farmcont.domain.Cidade;
-import com.farmcont.domain.Estado;
-import com.farmcont.domain.Produto;
+import com.farmcont.domain.*;
+import com.farmcont.repositories.*;
 
-import com.farmcont.repositories.CategoriaRepository;
-import com.farmcont.repositories.CidadeRepository;
-import com.farmcont.repositories.EstadoRepository;
-import com.farmcont.repositories.ProdutoRepository;
+import com.farmcont.domain.enums.TipoCliente;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -28,6 +23,10 @@ public class AulaSpringBootTesteApplication implements CommandLineRunner {
     private EstadoRepository estr;
     @Autowired
     private CidadeRepository cidr;
+    @Autowired
+    private ClienteRepository clir;
+    @Autowired
+    private EnderecoRepository endr;
 
     public static void main(String[] args) {
         SpringApplication.run(AulaSpringBootTesteApplication.class, args);
@@ -64,8 +63,8 @@ public class AulaSpringBootTesteApplication implements CommandLineRunner {
 //        pr.save(p2);
 //        pr.save(p3);
 
-//        Estado e1 = new Estado(null,"Minas Gerais");
-//        Estado e2 = new Estado(null,"São Paulo");
+//        Estado e1 = new Estado(null, "Minas Gerais");
+//        Estado e2 = new Estado(null, "São Paulo");
 //
 //        Cidade c1 = new Cidade(null, "Uberlândia", e1);
 //        Cidade c2 = new Cidade(null, "Campinas", e2);
@@ -80,6 +79,30 @@ public class AulaSpringBootTesteApplication implements CommandLineRunner {
 //        cidr.save(c1);
 //        cidr.save(c2);
 //        cidr.save(c3);
-
+//
+//        Cliente cli1 = new Cliente(null, "Maria", "maria@gmail.com", "5555555555", TipoCliente.PESSOAFISICA);
+//        Cliente cli2 = new Cliente(null, "João", "joao@gmail.com", "7777777777", TipoCliente.PESSOAFISICA);
+//        Cliente cli3 = new Cliente(null, "Farmcont", "farmcont@gmail.com", "2222222222", TipoCliente.PESSOAJURIDICA);
+//
+//        cli1.getTelefones().addAll(Arrays.asList("55995544332", "559188776655"));
+//        cli3.getTelefones().add("55333225544");
+//
+//        Endereco end1 = new Endereco(null, "Rua Flores", "300", "-", "Centro", "3820000", cli1, c1);
+//        Endereco end2 = new Endereco(null, "Rua Jucelino", "400", "-", "Centro", "3650020", cli2, c2);
+//        Endereco end3 = new Endereco(null, "Rua Alvorada", "100", "-", "Centro", "3650020", cli3, c3);
+//        Endereco end4 = new Endereco(null, "Rua Venâncio", "250", "-", "Centro", "42500000", cli1, c2);
+//
+//        cli1.getEnderecos().addAll(Arrays.asList(end1, end4));
+//        cli2.getEnderecos().add(end2);
+//        cli3.getEnderecos().add(end3);
+//
+//        clir.save(cli1);
+//        clir.save(cli2);
+//        clir.save(cli3);
+//
+//        endr.save(end1);
+//        endr.save(end2);
+//        endr.save(end3);
+//        endr.save(end4);
     }
 }
