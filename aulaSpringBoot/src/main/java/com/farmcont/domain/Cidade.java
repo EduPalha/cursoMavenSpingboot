@@ -1,16 +1,11 @@
 package com.farmcont.domain;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 @Entity
-@Table(name = "PRODUTO")
-public class Produto implements Serializable {
+@Table(name = "CIDADE")
+public class Cidade implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -18,27 +13,20 @@ public class Produto implements Serializable {
     private Integer id;
     @Column(name = "NOME", length = 50, nullable = false)
     private String nome;
-    @Column(name = "PRECO", nullable = false)
-    private Double preco;
 
-    @JsonBackReference //omitir a lista de categorias para cada produto
-    @ManyToMany
-    @JoinTable(name = "PRODUTO_CATEGORIA",
-            joinColumns = @JoinColumn(name = "fk_idProduto"),
-            inverseJoinColumns = @JoinColumn(name = "fk_idCategoria")
-    )
-    private List<Categoria> categorias = new ArrayList<>();
+    //Cidade está associado a apenas um estado, não é ManyToMany
+    @ManyToOne
+    @JoinColumn(name = "fk_idEstado") //nome da chave estrangeira
+    private Estado estado;
 
-    public Produto() {
+    public Cidade(){
+
     }
-
-    public Produto(Integer id) {
-        this.id = id;
-    }
-    public Produto(Integer id, String nome, Double preco) {
+    public Cidade(Integer id, String nome, Estado estado) {
+        super();
         this.id = id;
         this.nome = nome;
-        this.preco = preco;
+        this.estado = estado;
     }
 
     public Integer getId() {
@@ -57,20 +45,12 @@ public class Produto implements Serializable {
         this.nome = nome;
     }
 
-    public Double getPreco() {
-        return preco;
+    public Estado getEstado() {
+        return estado;
     }
 
-    public void setPreco(Double preco) {
-        this.preco = preco;
-    }
-
-    public List<Categoria> getCategorias() {
-        return categorias;
-    }
-
-    public void setCategorias(List<Categoria> categorias) {
-        this.categorias = categorias;
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 
     public int hashCode() {
@@ -87,7 +67,7 @@ public class Produto implements Serializable {
             return false;
         if (getClass() != obj.getClass())
             return false;
-        Produto other = (Produto) obj;
+        Cidade other = (Cidade) obj;
         if(id == null){
             if(other.id != null)
                 return false;
@@ -96,5 +76,4 @@ public class Produto implements Serializable {
             return false;
         return true;
     }
-
 }
