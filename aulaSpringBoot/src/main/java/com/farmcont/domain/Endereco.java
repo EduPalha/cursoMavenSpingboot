@@ -1,5 +1,7 @@
 package com.farmcont.domain;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -22,6 +24,7 @@ public class Endereco implements Serializable {
     @Column(name = "CEP", length = 8, nullable = false)
     private String cep;
 
+    @JsonBackReference
     @ManyToOne
     @JoinColumn(name = "fk_idCliente")
     private Cliente cliente;

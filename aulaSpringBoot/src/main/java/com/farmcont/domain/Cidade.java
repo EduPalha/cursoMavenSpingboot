@@ -1,5 +1,7 @@
 package com.farmcont.domain;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -15,6 +17,7 @@ public class Cidade implements Serializable {
     private String nome;
 
     //Cidade está associado a apenas um estado, não é ManyToMany
+    @JsonManagedReference
     @ManyToOne
     @JoinColumn(name = "fk_idEstado") //nome da chave estrangeira
     private Estado estado;

@@ -1,6 +1,7 @@
 package com.farmcont.domain;
 
 import com.farmcont.domain.enums.TipoCliente;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
 import java.io.Serializable;
@@ -26,6 +27,7 @@ public class Cliente implements Serializable {
     @Column(name = "TIPOCLIENTE", length = 20, nullable = false)
     private Integer tipo;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "cliente")
     private List<Endereco> enderecos = new ArrayList<>();
 

@@ -1,9 +1,7 @@
-//Controlador REST da captura de tela que explica o funcionamento do SpringBoot
-
 package com.farmcont.resources;
 
-import com.farmcont.domain.Categoria;
-import com.farmcont.services.CategoriaService;
+import com.farmcont.domain.Cliente;
+import com.farmcont.services.ClienteService;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping(value="/categorias")
-public class CategoriaResource {
+@RequestMapping(value="/clientes")
+public class ClienteResource {
     @Autowired
-    private CategoriaService service;
+    private ClienteService service;
 
     @RequestMapping(value="/{id}", method= RequestMethod.GET)
     public ResponseEntity<?> find(@PathVariable Integer id){
-        Categoria obj = service.buscar(id);
+        Cliente obj = service.buscar(id);
         return ResponseEntity.status(HttpStatus.OK).body(obj);
     }
 }
