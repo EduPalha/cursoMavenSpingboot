@@ -1,4 +1,4 @@
-package com.farmcont.resources.exception;
+package com.farmcont.resources.exceptions;
 
 import java.io.Serializable;
 
