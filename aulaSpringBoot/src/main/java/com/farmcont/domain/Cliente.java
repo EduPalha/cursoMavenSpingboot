@@ -4,6 +4,7 @@ import com.farmcont.domain.enums.TipoCliente;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import javax.persistence.*;
+import java.io.Serial;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -13,6 +14,7 @@ import java.util.Set;
 @Entity
 @Table(name = "CLIENTE")
 public class Cliente implements Serializable {
+    @Serial
     private static final long serialVersionUID = 1L;
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -27,21 +29,21 @@ public class Cliente implements Serializable {
     @Column(name = "TIPOCLIENTE", length = 20, nullable = false)
     private Integer tipo;
 
-    @JsonManagedReference
-    @OneToMany(mappedBy = "cliente")
-    private List<Endereco> enderecos = new ArrayList<>();
+//    @JsonManagedReference
+//    @OneToMany(mappedBy = "cliente")
+//    private List<Endereco> enderecos = new ArrayList<>();
 
     //Set é um conjunto de Strings que não aceitam repetição
     @ElementCollection
     @CollectionTable(name = "TELEFONE")
     private Set<String> telefones = new HashSet<>();
 
+//    @OneToOne(mappedBy = "cliente")
 //    private List<Pedido> pedidos = new ArrayList<>();
 
     public Cliente(){
 
     }
-
     public Cliente(Integer id, String nome, String email, String cpfOuCnpj, Integer tipo) {
         super();
         this.id = id;
@@ -91,13 +93,13 @@ public class Cliente implements Serializable {
         this.tipo = tipo.getCod();
     }
 
-    public List<Endereco> getEnderecos() {
-        return enderecos;
-    }
-
-    public void setEnderecos(List<Endereco> enderecos) {
-        this.enderecos = enderecos;
-    }
+//    public List<Endereco> getEnderecos() {
+//        return enderecos;
+//    }
+//
+//    public void setEnderecos(List<Endereco> enderecos) {
+//        this.enderecos = enderecos;
+//    }
 
     public Set<String> getTelefones() {
         return telefones;
@@ -110,11 +112,9 @@ public class Cliente implements Serializable {
 //    public List<Pedido> getPedidos() {
 //        return pedidos;
 //    }
-//
 //    public void setPedidos(List<Pedido> pedidos) {
 //        this.pedidos = pedidos;
 //    }
-
     public int hashCode() {
         final int prime = 31;
         int result = 1;

@@ -16,19 +16,25 @@ public class Pedido implements Serializable {
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "pedido")
     private Pagamento pagamento;
-    private Cliente cliente;
-    private Endereco enderecoEntrega;
+
+//    @ManyToMany
+//    @JoinColumn(name = "idCliente")
+//    private Cliente cliente;
+
+//    @ManyToMany
+//    @JoinColumn(name="idEnderecoEntrega")
+//    private Endereco enderecoEntrega;
 
     public Pedido() {
     }
 
-    public Pedido(Integer id, Date instante, Pagamento pagamento, Cliente cliente, Endereco enderecoEntrega) {
+    public Pedido(Integer id, Date instante, Cliente cliente, Endereco enderecoEntrega) {
         super();
         this.id = id;
         this.instante = instante;
-        this.pagamento = pagamento;
-        this.cliente = cliente;
-        this.enderecoEntrega = enderecoEntrega;
+//        this.pagamento = pagamento;
+//        this.cliente = cliente;
+//        this.enderecoEntrega = enderecoEntrega;
     }
 
     public Integer getId() {
@@ -47,29 +53,29 @@ public class Pedido implements Serializable {
         this.instante = instante;
     }
 
-    public Pagamento getPagamento() {
-        return pagamento;
-    }
+//    public Pagamento getPagamento() {
+//        return pagamento;
+//    }
+//
+//    public void setPagamento(Pagamento pagamento) {
+//        this.pagamento = pagamento;
+//    }
 
-    public void setPagamento(Pagamento pagamento) {
-        this.pagamento = pagamento;
-    }
+//    public Cliente getCliente() {
+//        return cliente;
+//    }
+//
+//    public void setCliente(Cliente cliente) {
+//        this.cliente = cliente;
+//    }
 
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
-    }
-
-    public Endereco getEnderecoEntrega() {
-        return enderecoEntrega;
-    }
-
-    public void setEnderecoEntrega(Endereco enderecoEntrega) {
-        this.enderecoEntrega = enderecoEntrega;
-    }
+//    public Endereco getEnderecoEntrega() {
+//        return enderecoEntrega;
+//    }
+//
+//    public void setEnderecoEntrega(Endereco enderecoEntrega) {
+//        this.enderecoEntrega = enderecoEntrega;
+//    }
 
     public int hashCode() {
         final int prime = 31;

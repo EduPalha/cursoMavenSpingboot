@@ -6,13 +6,14 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 @Entity
+@Inheritance(strategy = InheritanceType.JOINED) //na super classe tu faz isso para relacionar as subclasses
 @Table(name = "PAGAMENTO")
 public class Pagamento implements Serializable {
     private static final long serialVersionUID = 1L;
     @Id
     @Column(name = "ID", nullable = false)
     private Integer id;
-    private EstadoPagamento estado;
+    private Integer estadoAtual;
 
     @OneToOne
     @JoinColumn(name = "idPedido")
@@ -22,10 +23,35 @@ public class Pagamento implements Serializable {
     public Pagamento() {
     }
 
-    public Pagamento(Integer id, EstadoPagamento estado, Pedido pedido) {
+
+    public Pagamento(Integer id, Integer estadoAtual, Pedido pedido) {
         super();
         this.id = id;
-        this.estado = estado;
+        this.estadoAtual = estadoAtual;
+        this.pedido = pedido;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
+    public Integer getEstadoAtual() {
+        return estadoAtual;
+    }
+
+    public void setEstadoAtual(Integer estadoAtual) {
+        this.estadoAtual = estadoAtual;
+    }
+
+    public Pedido getPedido() {
+        return pedido;
+    }
+
+    public void setPedido(Pedido pedido) {
         this.pedido = pedido;
     }
 
