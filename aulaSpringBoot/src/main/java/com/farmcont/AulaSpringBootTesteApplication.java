@@ -35,7 +35,7 @@ public class AulaSpringBootTesteApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         //CUIDAR A ORDEM DE CRIAÇÃO DOS ITENS, POR EXEMPLO, UM ESTADO TEM VÁRIAS CIDADES E POR ISSO DEVE SER CRIADO PRIMEIRO
-
+//
 //        Categoria cat1 = new Categoria("informática");
 //        Categoria cat2 = new Categoria("escritório");
 //        Categoria cat3 = new Categoria("consultório");
