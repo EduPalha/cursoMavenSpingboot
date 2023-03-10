@@ -3,8 +3,10 @@ package com.farmcont.dto;
 import com.farmcont.domain.Categoria;
 import com.farmcont.domain.Produto;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.hibernate.validator.constraints.Length;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +19,9 @@ public class CategoriaDTO implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID")
     private Integer id;
+
+    @NotEmpty(message = "Preenchimento obrigatório!")
+    @Length(max=80, message = "O tamanho deve ser de no máximo 80 caracteres!")
     @Column(name = "NOME")
     private String nome;
 

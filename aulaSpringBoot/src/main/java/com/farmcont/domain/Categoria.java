@@ -32,6 +32,11 @@ public class Categoria implements Serializable {
         this.nome = nome;
     }
 
+    public Categoria(Integer id, String nome) {
+        this.id = id;
+        this.nome = nome;
+    }
+
     public Integer getId() {
         return id;
     }
@@ -82,5 +87,8 @@ public class Categoria implements Serializable {
         else if (!id.equals(other.id))
             return false;
         return true;
+    }
+
+    public void setId(Object o) {
     }
 }
