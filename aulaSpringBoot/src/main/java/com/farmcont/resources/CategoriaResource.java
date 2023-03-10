@@ -7,6 +7,8 @@ import com.farmcont.dto.CategoriaDTO;
 import com.farmcont.services.CategoriaService;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Sort;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,6 +21,8 @@ import java.util.stream.Collectors;
 public class CategoriaResource {
     @Autowired
     private CategoriaService service;
+
+
 
     //TRAZ TODOS OS ITENS CADASTRADOS NA CLASSE|TABELA CATEGORIA SEM OS PRODUTOS RELACIONADOS.
     @RequestMapping(method= RequestMethod.GET)
@@ -35,20 +39,17 @@ public class CategoriaResource {
         return ResponseEntity.status(HttpStatus.OK).body(obj);
     }
 
-
-//    @RequestMapping(value="/{page}", method= RequestMethod.GET)
-//    public ResponseEntity<Page<CategoriaDTO>> findPage(
-//            @RequestParam(value="page", defaultValue="0") Integer page,
-//            @RequestParam(value="linesPerPage", defaultValue="25") Integer linesPerPage,
-//            @RequestParam(value="orderBy", defaultValue="nome") String orderBy,
-//            @RequestParam(value="direction", defaultValue="ASC") Integer direction) {
-//
-//        Page<Categoria> list = service.findPage(page, linesPerPage, orderBy, direction);
-//        Page<CategoriaDTO> listDTO = list.map(obj -> new CategoriaDTO(obj));
-//        return ResponseEntity.status(HttpStatus.OK).body(listDTO);
-//    }
-
-
-
+    @RequestMapping(value="/page", method= RequestMethod.GET)
+    public ResponseEntity<Page<CategoriaDTO>> findPage(
+            @RequestParam(value="page", defaultValue="0") Integer page,
+            @RequestParam(value="linesPerPage", defaultValue="24") Integer linesPerPage,
+            @RequestParam(value="orderBy", defaultValue="nome") String orderBy,
+            @RequestParam(value="direction", defaultValue="ASC") String direction
+    )
+    {
+        Page<Categoria> list = service.findPage(page, linesPerPage, orderBy, String.valueOf(direction));
+        Page<CategoriaDTO> listDTO = list.map(obj -> new CategoriaDTO(obj));
+        return ResponseEntity.status(HttpStatus.OK).body(listDTO);
+    }
 
 }
