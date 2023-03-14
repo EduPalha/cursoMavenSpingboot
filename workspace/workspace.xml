@@ -1,0 +1,658 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1d0ada83-c606-465f-85fa-77442cbfa308" name="Changes" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2MSUdxjCmkNKDwzVEtFXA9orVT0" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;last_opened_file_path&quot;: &quot;/home/$USER/IdeaProjects&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Maven.dtos">
+    <configuration default="true" type="JetRunConfigurationType">
+      <module name="monitor-adapter" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <module name="monitor-adapter" />
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="dtos" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+                <option value="-DskipTests" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/libs/dtos" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="resource-server" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="clean" />
+                <option value="install" />
+                <option value="-DskipTests" />
+              </list>
+            </option>
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$/libs/resource-server" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+    <configuration name="local/auth" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="auth" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/core-microservices/auth/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/bookkeeping" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="bookkeeping" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/bookkeeping/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/certifier" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="certifier" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/certifier/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/config" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="services">
+            <list>
+              <option value="config" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/core-microservices/config/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/db" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="services">
+            <list>
+              <option value="db" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
+    <configuration name="local/discovery" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="discovery" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/core-microservices/discovery/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/fiscal" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="fiscal" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/fiscal/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/gateway" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="gateway" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/core-microservices/gateway/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/general-data" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="general-data" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/general-data/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/integrator" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="integrator" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/integrator/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/invoice-issuer" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="invoice-issuer" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/invoice-issuer/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/involved" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="involved" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/involved/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/main-records" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="main-records" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/main-records/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/monitor-adapter" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="monitor-adapter" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/monitor-adapter/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/monitor" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="monitor" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/monitor/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="local/user" type="docker-deploy" factoryName="docker-compose.yml" folderName="1-Local" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="user" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/core-microservices/user/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/auth" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="auth" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/core-microservices/auth/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/bookkeeping" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="bookkeeping" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/bookkeeping/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/certifier" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="certifier" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/certifier/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/discovery" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="1-Local">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="discovery" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/core-microservices/discovery/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/fiscal" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="fiscal" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/fiscal/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/gateway" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="gateway" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/core-microservices/gateway/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/general-data" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="general-data" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/general-data/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/integrator" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="integrator" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/integrator/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/invoice-issuer" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="invoice-issuer" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/invoice-issuer/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/involved" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="involved" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/involved/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/main-records" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="main-records" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/main-records/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/monitor-adapter" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="monitor-adapter" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/monitor-adapter/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/monitor" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="monitor" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/own-microservices/monitor/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <configuration name="testes/user" type="docker-deploy" factoryName="docker-compose.yml" folderName="2-Testes" server-name="2-TESTES">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="envFilePath" value="" />
+          <option name="commandLineOptions" value="--build" />
+          <option name="services">
+            <list>
+              <option value="user" />
+            </list>
+          </option>
+          <option name="sourceFilePath" value="docker/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2">
+        <option name="Maven.BeforeRunTask" enabled="true" file="$PROJECT_DIR$/core-microservices/user/pom.xml" goal="clean install -DskipTests" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Docker.local/auth" />
+      <item itemvalue="Docker.local/bookkeeping" />
+      <item itemvalue="Docker.local/certifier" />
+      <item itemvalue="Docker.local/config" />
+      <item itemvalue="Docker.local/db" />
+      <item itemvalue="Docker.local/discovery" />
+      <item itemvalue="Docker.local/fiscal" />
+      <item itemvalue="Docker.local/gateway" />
+      <item itemvalue="Docker.local/general-data" />
+      <item itemvalue="Docker.local/integrator" />
+      <item itemvalue="Docker.local/invoice-issuer" />
+      <item itemvalue="Docker.local/involved" />
+      <item itemvalue="Docker.local/main-records" />
+      <item itemvalue="Docker.local/monitor-adapter" />
+      <item itemvalue="Docker.local/monitor" />
+      <item itemvalue="Docker.local/user" />
+      <item itemvalue="Docker.testes/auth" />
+      <item itemvalue="Docker.testes/bookkeeping" />
+      <item itemvalue="Docker.testes/certifier" />
+      <item itemvalue="Docker.testes/discovery" />
+      <item itemvalue="Docker.testes/fiscal" />
+      <item itemvalue="Docker.testes/gateway" />
+      <item itemvalue="Docker.testes/general-data" />
+      <item itemvalue="Docker.testes/integrator" />
+      <item itemvalue="Docker.testes/invoice-issuer" />
+      <item itemvalue="Docker.testes/involved" />
+      <item itemvalue="Docker.testes/main-records" />
+      <item itemvalue="Docker.testes/monitor-adapter" />
+      <item itemvalue="Docker.testes/monitor" />
+      <item itemvalue="Docker.testes/user" />
+      <item itemvalue="Maven.dtos" />
+      <item itemvalue="Maven.resource-server" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1d0ada83-c606-465f-85fa-77442cbfa308" name="Changes" comment="" />
+      <created>1677760568776</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1677760568776</updated>
+    </task>
+    <servers />
+  </component>
+</project>

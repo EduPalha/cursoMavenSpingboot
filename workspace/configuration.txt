@@ -1,0 +1,13 @@
+1- clone repository (ide)
+2- copy workspace.xml para farmcont/.idea
+3- run local-config (ide)
+4- run update-ms-config.sh (terminal)
+sudo lsof -t -i:5432
+5- run local/db (ide)
+6- run local/gateway (ide)
+7- run local/discovery (ide)
+8- run dtos (ide)
+9- run resource-server (ide)
+10- run local/user (ide)
+11- run local/auth (ide)
+
